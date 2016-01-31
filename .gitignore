@@ -1,0 +1,16 @@
+# OS Generated Files #
+######################
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# lesnar #
+######################
+.vagrant
+log/*.log
+
+# Project Specific #
+######################
