@@ -1,6 +1,6 @@
 ---
-provider: virtualbox
-cpu: 1
+provider: parallels
+cpu: 2
 ram: 1024
 ip: 192.168.101.10
 vmname: lesnar
