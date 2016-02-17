@@ -47,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Network settings - Private network, not accessible via the internet
   config.vm.hostname = "lesnar.dev"
-  config.vm.network "private_network", ip: "192.168.50.101"
+  config.vm.network "private_network", ip: "192.168.101.10"
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
   config.hostmanager.aliases = %w(www.lesnar.dev lesnar.dev)
 
