@@ -27,16 +27,14 @@ TBA
 * If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,
 * If using Parallels, run in Terminal: `vagrant plugin install vagrant-parallels`.
 
-## Usage
+## Project Usage
 
 TBA
 
-* Adjust the variables in `lesnar.yaml` to suit your preferences.
+* Download the [latest release](https://github.com/fephil/lesnar/releases) and extract to a directory,
+* Adjust the variables in `lesnar.yml` to suit your preferences,
+* In project folder, run in Terminal: `vagrant up`.
 
 ## Known Issues
-
-TBA
-
-## Credit
 
 TBA
