@@ -35,25 +35,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     prl.update_guest_tools = true
   end
 
-  # Virtual machine config
-  Vagrant.configure("2") do |config|
+  # Enable VirtualBox guest additions to be updated
+  config.vbguest.auto_update = true
 
-    # Hostmanager
-    config.hostmanager.enabled = true
-    config.hostmanager.manage_host = true
-    config.hostmanager.manage_guest = true
-    config.hostmanager.ignore_private_ip = false
-    config.hostmanager.include_offline = true
+  # Hostmanager config
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+  config.hostmanager.manage_guest = true
+  config.hostmanager.ignore_private_ip = false
+  config.hostmanager.include_offline = true
 
-    # Enable VirtualBox guest additions to be updated
-    config.vbguest.auto_update = true
-
-    # Network settings - Private network, not accessible via the internet
-    config.vm.hostname = "lesnar"
-    config.vm.network "private_network", ip: "192.168.50.101"
-    config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
-    config.hostmanager.aliases = %w(www.lesnar.dev lesnar.dev)
-  end
+  # Network settings - Private network, not accessible via the internet
+  config.vm.hostname = "lesnar.dev"
+  config.vm.network "private_network", ip: "192.168.50.101"
+  config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+  config.hostmanager.aliases = %w(www.lesnar.dev lesnar.dev)
 
   # Ansible provisioner
   # config.vm.provision "ansible" do |ansible|
