@@ -20,10 +20,11 @@ TBA
 TBA
 
 * Install VirtualBox 5 Or Parallels 11 Pro,
-* vagrant plugin install vagrant-hostmanager,
-* vagrant plugin install vagrant-triggers,
-* If using VirtualBox: vagrant plugin install vagrant-vbguest,
-* If using Parallels: vagrant plugin install vagrant-parallels.
+* Install Vagrant 1.8.1,
+* `vagrant plugin install vagrant-hostmanager`,
+* `vagrant plugin install vagrant-triggers`,
+* If using VirtualBox: `vagrant plugin install vagrant-vbguest`,
+* If using Parallels: `vagrant plugin install vagrant-parallels`.
 
 ## Usage
 
