@@ -21,6 +21,7 @@ TBA
 
 * Install VirtualBox 5 Or Parallels 11 Pro,
 * Install Vagrant 1.8.1,
+* Install Ansible 2.0,
 * Run in Terminal: `vagrant plugin install vagrant-hostmanager`,
 * Run in Terminal: `vagrant plugin install vagrant-triggers`,
 * If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,

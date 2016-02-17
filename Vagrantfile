@@ -6,7 +6,7 @@ require 'yaml'
 # Lesnar v0.0.1
 
 # Get config file
-lesnar = YAML.load_file('lesnar.yaml')
+lesnar = YAML.load_file('lesnar.yml')
 
 Vagrant.require_version ">= 1.8.1"
 VAGRANTFILE_API_VERSION = "2"
@@ -56,9 +56,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
   config.hostmanager.aliases = lesnar["aliases"]
 
+  # Disable the new default behavior introduced in Vagrant 1.7, to
+  # ensure that all Vagrant machines will use the same SSH key pair.
+  # See https://github.com/mitchellh/vagrant/issues/5005
+  config.ssh.insert_key = false
+
   # Ansible provisioner
-  # config.vm.provision "ansible" do |ansible|
-  #  ansible.playbook = "provision/playbook.yml"
-  # end
+  config.vm.provision "ansible" do |ansible|
+    ansible.verbose = "v"
+    ansible.playbook = "provision/playbook.yml"
+  end
 
 end
