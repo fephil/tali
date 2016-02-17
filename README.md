@@ -1,12 +1,13 @@
 # lesnar v0.0.x
 
-**A Vagrant server setup for developing dynamic websites.**
+**A Vagrant server setup for developing LAMP websites.**
 
-* Author: [Phil Lennon](http://iampjl.co.uk)
-* Source: [github.com/PJL101/lesnar](http://github.com/PJL101/lesnar)
-* Issues and Suggestions: [github.com/PJL101/lesnar/issues](http://github.com/PJL101/lesnar/issues)
-* Twitter: [@PJL101](http://twitter.com/pjl101)
-* Email: [enquiry@iampjl.co.uk](mailto:enquiry@iampjl.co.uk)
+* Author: [Phil Lennon](http://frontendphil.com)
+* Source: [github.com/fephil/lesnar](http://github.com/fephil/lesnar)
+* Issues and Suggestions: [github.com/fephil/lesnar/issues](http://github.com/fephil/lesnar/issues)
+* Download: [https://github.com/fephil/lesnar/releases](https://github.com/fephil/lesnar/releases)
+* Twitter: [@frontendphil](http://twitter.com/frontendphil)
+* Email: [enquiry@frontendphil.com](mailto:enquiry@frontendphil.com)
 
 ***
 
@@ -14,13 +15,29 @@
 
 TBA
 
-## Install
+## First Time Install
 
 TBA
+
+* Install VirtualBox 5 Or Parallels 11 Pro,
+* vagrant plugin install vagrant-hostmanager,
+* vagrant plugin install vagrant-triggers,
+* If using VirtualBox: vagrant plugin install vagrant-vbguest,
+* If using Parallels: vagrant plugin install vagrant-parallels.
 
 ## Usage
 
 TBA
+
+* Optional: Change `config.hostmanager.aliases` to suit the project.
+
+If using Virtual Box:
+
+* Optional: Change `v.name` to suit the project.
+
+If using Parallels:
+
+* Change vagrant default provider to parallels.
 
 ## Known Issues
 
