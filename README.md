@@ -21,24 +21,16 @@ TBA
 
 * Install VirtualBox 5 Or Parallels 11 Pro,
 * Install Vagrant 1.8.1,
-* `vagrant plugin install vagrant-hostmanager`,
-* `vagrant plugin install vagrant-triggers`,
-* If using VirtualBox: `vagrant plugin install vagrant-vbguest`,
-* If using Parallels: `vagrant plugin install vagrant-parallels`.
+* Run in Terminal: `vagrant plugin install vagrant-hostmanager`,
+* Run in Terminal: `vagrant plugin install vagrant-triggers`,
+* If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,
+* If using Parallels, run in Terminal: `vagrant plugin install vagrant-parallels`.
 
 ## Usage
 
 TBA
 
-* Optional: Change `config.hostmanager.aliases` to suit the project.
-
-If using Virtual Box:
-
-* Optional: Change `v.name` to suit the project.
-
-If using Parallels:
-
-* Change vagrant default provider to parallels.
+* Adjust the variables in `lesnar.yaml` to suit your preferences.
 
 ## Known Issues
 

@@ -1,0 +1,8 @@
+---
+provider: virtualbox
+cpu: 1
+ram: 1024
+ip: 192.168.101.10
+vmname: lesnar
+hostname: lesnar.dev
+aliases: ["lesnar.dev", "www.lesnar.dev"]
