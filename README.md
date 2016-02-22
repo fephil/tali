@@ -15,6 +15,19 @@
 
 TBA
 
+Lesnar is an easy to use LEMP development server, using the latest stable versions of the best open source technologies available.
+
+Lesnar contains the following key features:
+
+* Built for Vagrant to quickly spin up a Virtual machine, without affecting the host computer,
+* Fully supports VirtualBox 5 and Parallels 11,
+* Easy to configure by using the 'lesnar.yml' file,
+* Uses Ansible 2 for installing packages,
+* Built on the latest Ubuntu LTS version (14.04),
+* Uses Nginx 1.8.
+
+**Note:** Lesnar is designed to only run as a development server, it does not have the security required for production use.
+
 ## First Time Install
 
 TBA
@@ -30,6 +43,8 @@ TBA
 ## Project Usage
 
 TBA
+
+**Note:** An internet connection is required for downloading the various files required.
 
 * Download the [latest release](https://github.com/fephil/lesnar/releases) and extract to a directory,
 * Adjust the variables in `lesnar.yml` to suit your preferences,
