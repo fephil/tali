@@ -1,0 +1,11 @@
+- name: Add php ppa
+  become: true
+  apt_repository: repo=ppa:ondrej/php
+
+- name: Update apt
+  become: true
+  apt: update_cache=yes
+
+- name: Install php
+  become: yes
+  apt: pkg=php state=present

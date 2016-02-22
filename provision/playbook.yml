@@ -4,3 +4,4 @@
     - vars/all.yml
   roles:
     - nginx
+    - php-fpm
