@@ -56,6 +56,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
   config.hostmanager.aliases = lesnar["aliases"]
 
+  # Folder sharing
+  config.vm.synced_folder "www", "/server/www", owner: "www-data", group: "www-data"
+  config.vm.synced_folder "database", "/server/database", owner: "www-data", group: "www-data"
+  config.vm.synced_folder "log", "/server/log", :owner => "www-data", group: "www-data"
+
   # Disable the new default behavior introduced in Vagrant 1.7, to
   # ensure that all Vagrant machines will use the same SSH key pair.
   # See https://github.com/mitchellh/vagrant/issues/5005
