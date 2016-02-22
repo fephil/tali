@@ -1,7 +1,11 @@
-- name: add nginx stable ppa
+- name: Add nginx stable ppa
   become: true
   apt_repository: repo=ppa:nginx/stable state=present
 
-- name: install nginx
+- name: Update apt
+  become: true
+  apt: update_cache=yes
+
+- name: Install nginx
   become: true
   apt: name=nginx state=present
