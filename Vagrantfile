@@ -59,11 +59,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Disable the new default behavior introduced in Vagrant 1.7, to
   # ensure that all Vagrant machines will use the same SSH key pair.
   # See https://github.com/mitchellh/vagrant/issues/5005
-  config.ssh.insert_key = false
+  # config.ssh.insert_key = false
 
   # Ansible provisioner
   config.vm.provision "ansible" do |ansible|
-    ansible.verbose = "v"
+    # ansible.verbose = "v"
     ansible.playbook = "provision/playbook.yml"
   end
 
