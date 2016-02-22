@@ -8,6 +8,7 @@ require 'yaml'
 # Get config file
 lesnar = YAML.load_file('lesnar.yml')
 
+# Require a tested Vagrant version
 Vagrant.require_version ">= 1.8.1"
 VAGRANTFILE_API_VERSION = "2"
 
@@ -71,5 +72,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # ansible.verbose = "v"
     ansible.playbook = "provision/playbook.yml"
   end
-
 end
