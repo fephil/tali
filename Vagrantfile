@@ -53,7 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Network settings - Private network, not accessible via the internet
   config.vm.hostname = lesnar["hostname"]
   config.vm.network "private_network", ip: lesnar["ip"]
-  config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
   config.hostmanager.aliases = lesnar["aliases"]
 
   # Folder sharing
