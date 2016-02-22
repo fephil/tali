@@ -20,7 +20,7 @@ Lesnar is an easy to use LEMP development server, using the latest stable versio
 Lesnar contains the following key features:
 
 * Built for Vagrant to quickly spin up a Virtual machine, without affecting the host computer,
-* Fully supports VirtualBox 5 and Parallels 11,
+* Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
 * Easy to configure by using the 'lesnar.yml' file,
 * Uses Ansible 2 for installing packages,
 * Built on the latest Ubuntu LTS version (14.04),
@@ -32,7 +32,7 @@ Lesnar contains the following key features:
 
 TBA
 
-* Install VirtualBox 5 Or Parallels 11 Pro,
+* Install VirtualBox 5 Or Parallels 11 (Pro/Business),
 * Install Vagrant 1.8.1,
 * Install Ansible 2.0,
 * Run in Terminal: `vagrant plugin install vagrant-hostmanager`,
