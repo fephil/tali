@@ -1,6 +1,6 @@
 # lesnar v0.0.x
 
-**A Vagrant server setup for developing LAMP websites.**
+**A Vagrant server setup for developing LEMP websites.**
 
 * Author: [Phil Lennon](http://frontendphil.com)
 * Source: [github.com/fephil/lesnar](http://github.com/fephil/lesnar)
