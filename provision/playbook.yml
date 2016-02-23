@@ -4,4 +4,4 @@
   roles:
     - server
     - nginx
-    - php-fpm
+    - php
