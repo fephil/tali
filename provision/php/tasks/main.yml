@@ -1,5 +1,7 @@
 ---
-- name: Add php ppa
+- include_vars: lesnar.yml
+
+- name: Add PHP ppa
   become: true
   apt_repository: repo=ppa:ondrej/php
 
@@ -7,6 +9,11 @@
   become: true
   apt: update_cache=yes
 
-- name: Install php
-  become: yes
-  apt: pkg=php state=present
+- name: Install PHP
+  become: true
+  apt: pkg=php7.0-fpm state=present
+
+- name: Install PHP Packages
+  become: true
+  apt: pkg={{ item }} state=present
+  with_items: php.packages
