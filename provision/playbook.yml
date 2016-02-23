@@ -1,7 +1,6 @@
+---
 - name: Install LEMP dependencies
   hosts: all
-  vars_files:
-    - vars/all.yml
   roles:
     - nginx
     - php-fpm
