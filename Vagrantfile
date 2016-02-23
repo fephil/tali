@@ -26,7 +26,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Set default provider for safety incase we forget to use a flag
-  ENV['VAGRANT_DEFAULT_PROVIDER'] = lesnar["provider"]
+  ENV['VAGRANT_DEFAULT_PROVIDER'] = lesnar["vm"]["provider"]
 
   # VirtualBox OS - Ubuntu 14.04 x64
   config.vm.box = "ubuntu/trusty64"
@@ -38,17 +38,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Virtualbox specific settings
   config.vm.provider "virtualbox" do |v|
-    v.name = lesnar["vmname"]
-    v.memory = lesnar["ram"]
-    v.cpus = lesnar["cpu"]
+    v.name = lesnar["vm"]["name"]
+    v.memory = lesnar["vm"]["ram"]
+    v.cpus = lesnar["vm"]["cpu"]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
   # Parallels specific settings.
   config.vm.provider "parallels" do |prl|
-    prl.name = lesnar["vmname"]
-    prl.memory = lesnar["ram"]
-    prl.cpus = lesnar["cpu"]
+    prl.name = lesnar["vm"]["name"]
+    prl.memory = lesnar["vm"]["ram"]
+    prl.cpus = lesnar["vm"]["cpu"]
     prl.update_guest_tools = true
   end
 
@@ -64,9 +64,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Network settings - Private network, not accessible via the internet
   config.vm.hostname = lesnar["hostname"]
-  config.vm.network "private_network", ip: lesnar["ip"]
+  config.vm.network "private_network", ip: lesnar["vm"]["ip"]
   # config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
-  config.hostmanager.aliases = lesnar["aliases"]
+  config.hostmanager.aliases = lesnar["vm"]["aliases"]
 
   # Folder sharing
   config.vm.synced_folder "www", "/server/www", owner: "www-data", group: "www-data"

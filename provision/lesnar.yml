@@ -1,8 +1,9 @@
 ---
-provider: parallels
-cpu: 2
-ram: 1024
-ip: 192.168.101.10
-vmname: lesnar
-hostname: lesnar.dev
-aliases: ["www.lesnar.dev", "testsubdomain.lesnar.dev"]
+vm:
+  provider: parallels
+  cpu: 2
+  ram: 1024
+  ip: 192.168.101.10
+  name: lesnar
+  hostname: lesnar.dev
+  aliases: ["www.lesnar.dev", "testsubdomain.lesnar.dev"]
