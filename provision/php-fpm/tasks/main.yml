@@ -1,3 +1,4 @@
+---
 - name: Add php ppa
   become: true
   apt_repository: repo=ppa:ondrej/php

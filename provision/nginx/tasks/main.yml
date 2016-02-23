@@ -1,3 +1,4 @@
+---
 - name: Add nginx stable ppa
   become: true
   apt_repository: repo=ppa:nginx/stable state=present
