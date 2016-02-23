@@ -1,0 +1,18 @@
+---
+- include_vars: lesnar.yml
+
+- name: Update apt
+  become: true
+  apt: update_cache=yes
+
+- name: Configure the timezone file
+  become: true
+  template: src=timezone.tpl dest=/etc/timezone
+
+- name: symlink the timezone file
+  become: true
+  file: src=/usr/share/zoneinfo/{{server.timezone}} dest=/etc/localtime state=link force=yes backup=yes
+
+- name: Set default system language
+  become: true
+  shell: locale-gen {{server.locale}}

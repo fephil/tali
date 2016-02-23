@@ -2,5 +2,6 @@
 - name: Install LEMP dependencies
   hosts: all
   roles:
+    - server
     - nginx
     - php-fpm

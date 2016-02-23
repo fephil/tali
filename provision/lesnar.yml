@@ -7,3 +7,6 @@ vm:
   name: lesnar
   hostname: lesnar.dev
   aliases: ["www.lesnar.dev", "testsubdomain.lesnar.dev"]
+server:
+  timezone: UTC
+  locale: en_US.UTF-8

@@ -57,4 +57,5 @@ TBA
 * Windows isn't supported at this time. [#10](https://github.com/fephil/lesnar/issues/10)
 
 ## Credit
-* [StackOverflow](https://stackoverflow.com/questions/2108727/which-in-ruby-checking-if-program-exists-in-path-from-ruby) - For checking what host operating system is running
+* [StackOverflow](https://stackoverflow.com/questions/2108727/which-in-ruby-checking-if-program-exists-in-path-from-ruby) - For checking what host operating system is running,
+* [Phansible](http://phansible.com) - For server language and timezone example.
