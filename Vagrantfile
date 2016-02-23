@@ -1,14 +1,25 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-require 'yaml'
-
 # Lesnar v0.0.1
 
 # Get config file
-lesnar = YAML.load_file('lesnar.yml')
+require 'yaml'
+lesnar = YAML.load_file('provision/lesnar.yml')
 
-# Require a tested Vagrant version
+# Are we on Unix/OSX or Windows?
+def which(cmd)
+  exts = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : ['']
+  ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
+    exts.each { |ext|
+      exe = File.join(path, "#{cmd}#{ext}")
+      return exe if File.executable?(exe) && !File.directory?(exe)
+    }
+  end
+  return nil
+end
+
+# Minimum Vagrant version
 Vagrant.require_version ">= 1.8.1"
 VAGRANTFILE_API_VERSION = "2"
 
@@ -67,9 +78,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # See https://github.com/mitchellh/vagrant/issues/5005
   # config.ssh.insert_key = false
 
-  # Ansible provisioner
-  config.vm.provision "ansible" do |ansible|
-    # ansible.verbose = "v"
-    ansible.playbook = "provision/playbook.yml"
+  # If Ansible is installed, run the playbook
+  # Or run the Windows script which installs Ansible from inside the guest VM
+  if which('ansible-playbook')
+    config.vm.provision "ansible" do |ansible|
+      # ansible.verbose = "v"
+      ansible.playbook = "provision/playbook.yml"
+    end
+  else
+    config.vm.synced_folder "provision", "/server/provision"
+    config.vm.provision :shell, path: "provision/windows.sh", args: ["default"]
   end
 end

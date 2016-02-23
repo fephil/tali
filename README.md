@@ -19,10 +19,10 @@ Lesnar is an easy to use LEMP development server, using the latest stable versio
 
 Lesnar contains the following key features:
 
-* Built for Vagrant to quickly spin up a Virtual machine, without affecting the host computer,
+* Built for Vagrant to quickly spin up a Virtual Machine, without affecting the host computer,
 * Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
 * Easy to configure by using the 'lesnar.yml' file,
-* Uses Ansible 2 for installing packages,
+* Uses Ansible 2 for installing required packages automatically,
 * Built on the latest Ubuntu LTS version (14.04),
 * Uses Nginx 1.8.
 
@@ -31,6 +31,8 @@ Lesnar contains the following key features:
 ## First Time Install
 
 TBA
+
+**Note:** Lesnar works on Linux or OSX. Windows is not supported at this time, but will be in the future.
 
 * Install VirtualBox 5 Or Parallels 11 (Pro/Business),
 * Install Vagrant 1.8.1,
@@ -47,9 +49,12 @@ TBA
 **Note:** An internet connection is required for downloading the various files required.
 
 * Download the [latest release](https://github.com/fephil/lesnar/releases) and extract to a directory,
-* Adjust the variables in `lesnar.yml` to suit your preferences,
+* Adjust the variables in `provision/lesnar.yml` to suit your preferences,
 * In project folder, run in Terminal: `vagrant up`.
 
 ## Known Issues
 
-TBA
+* Windows isn't supported at this time. [#10](https://github.com/fephil/lesnar/issues/10)
+
+## Credit
+* [StackOverflow](https://stackoverflow.com/questions/2108727/which-in-ruby-checking-if-program-exists-in-path-from-ruby) - For checking what host operating system is running
