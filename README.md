@@ -17,7 +17,7 @@ TBA
 
 Lesnar is an easy to use LEMP development server, using the latest stable versions of the best open source technologies available. Lesnar contains the following key features:
 
-* Built using Vagrant & Ansible to quickly spin up a Virtual Machine, without affecting the host computer,
+* Built using Vagrant & Ansible to automatically build a Virtual Machine, without affecting the host computer,
 * Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
 * Easy to configure by using the 'lesnar.yml' file,
 * Built on the latest Ubuntu LTS version (14.04),
@@ -52,6 +52,10 @@ TBA
 * Put your website files into the www folder,
 * In project folder, run in Terminal: `vagrant up`,
 * Wait for the server to build, you may need to enter your system password.
+
+### Adding PHP modules
+
+TBA
 
 ### Editing mysql
 
