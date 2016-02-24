@@ -15,7 +15,7 @@
 
 TBA
 
-Lesnar is an easy to use LEMP development server, using the latest stable versions of the best open source technologies available. Lesnar contains the following key features:
+Lesnar is an easy to use LEMP development server which uses the latest modern open source technologies available. Lesnar contains the following key features:
 
 * Built using Vagrant & Ansible to automatically build a Virtual Machine, without affecting the host computer,
 * Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
@@ -35,7 +35,7 @@ Lesnar is an easy to use LEMP development server, using the latest stable versio
 * If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,
 * If using Parallels, run in Terminal: `vagrant plugin install vagrant-parallels`.
 
-Parallels 11 is recommended because it is faster than VirtualBox, but VirtualBox is free to use.
+On OSX, Parallels 11 is recommended because it is faster than VirtualBox, but VirtualBox is free to use.
 
 **Note:** Lesnar works on Linux or OSX. Windows is not supported at this time, but hopefully will be in the future.
 
