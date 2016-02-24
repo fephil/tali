@@ -69,6 +69,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.aliases = lesnar["vm"]["aliases"]
 
   # Folder sharing
+  # Disable the default vagrant behaviour of sharing the entire project
+  config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.synced_folder "www", "/server/www", owner: "www-data", group: "www-data"
   config.vm.synced_folder "database", "/server/database", owner: "www-data", group: "www-data"
   config.vm.synced_folder "log", "/server/log", :owner => "www-data", group: "www-data"
