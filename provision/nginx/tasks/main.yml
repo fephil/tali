@@ -14,4 +14,4 @@
 - name: Change default nginx site
   become: true
   template: src=default.tpl dest=/etc/nginx/sites-available/default
-  notify: restart nginx
+  notify: Restart nginx
