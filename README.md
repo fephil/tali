@@ -15,42 +15,47 @@
 
 TBA
 
-Lesnar is an easy to use LEMP development server, using the latest stable versions of the best open source technologies available.
+Lesnar is an easy to use LEMP development server, using the latest stable versions of the best open source technologies available. Lesnar contains the following key features:
 
-Lesnar contains the following key features:
-
-* Built for Vagrant to quickly spin up a Virtual Machine, without affecting the host computer,
+* Built using Vagrant & Ansible to quickly spin up a Virtual Machine, without affecting the host computer,
 * Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
 * Easy to configure by using the 'lesnar.yml' file,
-* Uses Ansible 2 for installing required packages automatically,
 * Built on the latest Ubuntu LTS version (14.04),
 * Uses nginx 1.8,
 * Uses PHP 7.
 
-**Note:** Lesnar is designed to only run as a development server, it does not have the security required for production use.
+**Note:** Lesnar is designed to only run as a development server on your machine, it does not have the security required for production use.
 
 ## First Time Install
 
-TBA
-
-**Note:** Lesnar works on Linux or OSX. Windows is not supported at this time, but will be in the future.
-
 * Install VirtualBox 5 Or Parallels 11 (Pro/Business),
-* Install Vagrant 1.8.1,
-* Install Ansible 2.0,
+* Install Vagrant 1.8.1. [Download Link](https://www.vagrantup.com/downloads.html),
+* Install Ansible 2.0. [Install instructions](http://docs.ansible.com/ansible/intro_installation.html#installing-the-control-machine),
 * Run in Terminal: `vagrant plugin install vagrant-hostmanager vagrant-triggers`,
 * If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,
 * If using Parallels, run in Terminal: `vagrant plugin install vagrant-parallels`.
+
+Parallels 11 is recommended because it is faster than VirtualBox, but VirtualBox is free to use.
+
+**Note:** Lesnar works on Linux or OSX. Windows is not supported at this time, but hopefully will be in the future.
 
 ## Project Usage
 
 TBA
 
+### Setup
+
 **Note:** An internet connection is required for downloading the various files required.
 
 * Download the [latest release](https://github.com/fephil/lesnar/releases) and extract to a directory,
 * Adjust the variables in `provision/lesnar.yml` to suit your preferences,
-* In project folder, run in Terminal: `vagrant up`.
+* Put your website files into the www folder,
+* In project folder, run in Terminal: `vagrant up`,
+* Wait for the server to build, you may need to enter your system password.
+
+### Editing mysql
+
+TBA
 
 ## Known Issues
 
