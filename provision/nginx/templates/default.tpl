@@ -5,8 +5,11 @@ server {
 
   client_max_body_size 64M;
 
+  access_log /server/log/nginx-access.log;
+  error_log  /server/log/nginx-error.log error;
+
   location / {
-    index index.php index.html index.htm;
+    index index.php index.html index.htm; 
     try_files $uri $uri/ /index.php?$args;
   }
 
