@@ -13,16 +13,15 @@
 
 ## About
 
-TBA
-
 Lesnar is an easy to use LEMP development server which uses the latest modern open source technologies available. Lesnar contains the following key features:
 
 * Built using Vagrant & Ansible to automatically build a Virtual Machine, without affecting the host computer,
 * Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
 * Easy to configure by using the 'lesnar.yml' file,
 * Built on the latest Ubuntu LTS version (14.04),
-* Uses nginx 1.8,
-* Uses PHP 7.
+* Includes nginx 1.8,
+* Includes PHP 7,
+* Includes MariaDB 10.1.
 
 **Note:** Lesnar is designed to only run as a development server on your machine, it does not have the security required for production use.
 

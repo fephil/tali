@@ -4,4 +4,5 @@
   roles:
     - server
     - nginx
+    - mariadb    
     - php

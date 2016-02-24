@@ -1,0 +1,19 @@
+---
+- name: Add MariaDB repository
+  become: true
+  apt_repository: repo='deb [arch=amd64,i386] http://lon1.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu trusty main' state=present
+
+- name: Add key for MariaDB repository
+  become: true
+  apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db
+
+- name: Update apt
+  become: true
+  apt: update_cache=yes
+
+- name: Install MariaDB
+  become: true
+  apt: pkg={{ item }} state=present
+  with_items:
+    - mariadb-server
+    - python-mysqldb
