@@ -1,7 +1,7 @@
 server {
-  listen 80 default_server;
+  listen 80;
   server_name {{ vm.hostname }};
-  root /server/www/;
+  root /server/www;
 
   client_max_body_size 64M;
 
