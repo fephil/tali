@@ -24,7 +24,8 @@ Lesnar contains the following key features:
 * Easy to configure by using the 'lesnar.yml' file,
 * Uses Ansible 2 for installing required packages automatically,
 * Built on the latest Ubuntu LTS version (14.04),
-* Uses Nginx 1.8.
+* Uses nginx 1.8,
+* Uses PHP 7.
 
 **Note:** Lesnar is designed to only run as a development server, it does not have the security required for production use.
 
@@ -37,8 +38,7 @@ TBA
 * Install VirtualBox 5 Or Parallels 11 (Pro/Business),
 * Install Vagrant 1.8.1,
 * Install Ansible 2.0,
-* Run in Terminal: `vagrant plugin install vagrant-hostmanager`,
-* Run in Terminal: `vagrant plugin install vagrant-triggers`,
+* Run in Terminal: `vagrant plugin install vagrant-hostmanager vagrant-triggers`,
 * If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,
 * If using Parallels, run in Terminal: `vagrant plugin install vagrant-parallels`.
 
@@ -57,5 +57,6 @@ TBA
 * Windows isn't supported at this time. [#10](https://github.com/fephil/lesnar/issues/10)
 
 ## Credit
+
 * [StackOverflow](https://stackoverflow.com/questions/2108727/which-in-ruby-checking-if-program-exists-in-path-from-ruby) - For checking what host operating system is running,
 * [Phansible](http://phansible.com) - For server language and timezone example.
