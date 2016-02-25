@@ -1,4 +1,6 @@
 ---
+- include_vars: lesnar.yml
+
 - name: Add MariaDB repository
   become: true
   apt_repository: repo='deb [arch=amd64,i386] http://lon1.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu trusty main' state=present
@@ -17,3 +19,24 @@
   with_items:
     - mariadb-server
     - python-mysqldb
+
+- name: Generate a random root password
+  command: /usr/bin/openssl rand -base64 16
+  register: mariadb_random_password
+
+- name: Update root password
+  mysql_user: name=root host={{ item }} check_implicit_admin=yes login_user=root login_password= password={{ mariadb_random_password.stdout }}
+  with_items:
+    - "{{ vm.name }}"
+    - 127.0.0.1
+    - ::1
+    - localhost
+
+- name: Remove anonymous users
+  mysql_user: name='' host={{ item }} state=absent login_user=root login_password={{ mariadb_random_password.stdout }}
+  with_items:
+    - localhost
+    - "{{ vm.name }}"
+
+- name: Create user
+  mysql_user: name={{ mariadb.username }} password={{ mariadb.password }} priv=*.*:ALL state=present login_user=root login_password={{ mariadb_random_password.stdout }}
