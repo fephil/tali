@@ -1,4 +1,4 @@
-# lesnar v0.0.x
+# lesnar v0.0.1
 
 **A Vagrant server setup for developing LEMP websites.**
 
@@ -15,10 +15,10 @@
 
 Lesnar is an easy to use LEMP development server which uses the latest modern open source technologies available. Lesnar contains the following key features:
 
-* Built using Vagrant & Ansible to automatically build a Virtual Machine, without affecting the host computer,
+* Uses Vagrant & Ansible to automatically build a Virtual Machine, without affecting the host computer,
 * Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
 * Easy to configure by using the 'lesnar.yml' file,
-* Built on the latest Ubuntu LTS version (14.04),
+* Built on the latest official Ubuntu LTS version images (14.04),
 * Includes nginx 1.8,
 * Includes PHP 7,
 * Includes MariaDB 10.1.
@@ -34,15 +34,15 @@ Lesnar is an easy to use LEMP development server which uses the latest modern op
 * If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,
 * If using Parallels, run in Terminal: `vagrant plugin install vagrant-parallels`.
 
-On OSX, Parallels 11 is recommended because it is faster than VirtualBox, but VirtualBox is free to use.
+On OSX, using Parallels 11 is recommended due to its increased speed. However, VirtualBox is free.
 
 **Note:** Lesnar works on Linux or OSX. Windows is not supported at this time, but hopefully will be in the future.
 
-## Project Usage
+## Usage
 
-TBA
+Once the first time install has been completed, it is an easy process to set up a website.
 
-### Setup
+### Project Setup
 
 **Note:** An internet connection is required for downloading the various files required.
 
@@ -52,13 +52,42 @@ TBA
 * In project folder, run in Terminal: `vagrant up`,
 * Wait for the server to build, you may need to enter your system password.
 
-### Adding PHP modules
+### Accessing the Virtual Machine using SSH
 
-TBA
+Vagrant manages the SSH authentication process so all you need to do is run `vagrant ssh` in the project folder to access the Virtual Machine.
 
-### Editing mysql
+### Adding PHP extensions
 
-TBA
+If extra PHP modules are required e.g. GD, you can add them to the lesnar.yml file, under the PHP packages variable. Make sure you add the PHP 7 version of each extension e.g `php7.0-gd`. You can then install the extensions by running `vagrant provision` in the project folder.
+
+If you log into the Virtual Machine, you can run the following command to find PHP 7 extensions:
+
+`sudo apt-cache search php7-*`
+
+### Using MariaDB
+
+MariaDB is a drop in open source replacement for MySQL, all mySQL commands work identically and for day to day operation, there is no difference in using MariaDB.
+
+You can either directly log into MariaDB by using SSH or by using software like 'Sequel Pro'.
+
+#### To login using SSH:
+
+* `vagrant ssh`,
+* `mysql -u [username] -p`. Default username is 'lesnar',
+* Enter your password from lesnar.yml when prompted. Default password is 'lesnar'.
+
+#### To login using external software:
+
+These instructions are based on Sequel Pro for OSX. When creating a new connection:
+
+* Select SSH,
+* MySQL host: `127.0.0.1`,
+* Username: `[username]`. Default username is 'lesnar',
+* Password: `[password]`. Default password is 'lesnar',
+* Port: `default (3306)`,
+* SSH Host: `[hostname]`, Default hostname is 'lesnar' or 'lesnar.dev',
+* SSH User: `vagrant`,
+* SSH Password: `vagrant`.
 
 ## Known Issues
 
