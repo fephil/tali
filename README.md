@@ -34,9 +34,9 @@ Lesnar is an easy to use LEMP development server which uses the latest modern op
 * If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,
 * If using Parallels, run in Terminal: `vagrant plugin install vagrant-parallels`.
 
-On OSX, using Parallels 11 is recommended due to its increased speed. However, VirtualBox is free.
+On OSX, using Parallels 11 is recommended due to its increased speed. However, VirtualBox is free and works well.
 
-**Note:** Lesnar works on Linux or OSX. Windows is not supported at this time, but hopefully will be in the future.
+**Note:** Lesnar supports OSX or Linux. Windows is not supported at this time, but hopefully will be in the future.
 
 ## Usage
 
@@ -48,21 +48,13 @@ Once the first time install has been completed, it is an easy process to set up 
 
 * Download the [latest release](https://github.com/fephil/lesnar/releases) and extract to a directory,
 * Adjust the variables in `provision/lesnar.yml` to suit your preferences,
-* Put your website files into the www folder,
+* Put your website files into the `www` folder,
 * In project folder, run in Terminal: `vagrant up`,
-* Wait for the server to build, you may need to enter your system password.
+* Wait for the server to build, you may need to enter your host system password.
 
 ### Accessing the Virtual Machine using SSH
 
 Vagrant manages the SSH authentication process so all you need to do is run `vagrant ssh` in the project folder to access the Virtual Machine.
-
-### Adding PHP extensions
-
-If extra PHP modules are required e.g. GD, you can add them to the lesnar.yml file, under the PHP packages variable. Make sure you add the PHP 7 version of each extension e.g `php7.0-gd`. You can then install the extensions by running `vagrant provision` in the project folder.
-
-If you log into the Virtual Machine, you can run the following command to find PHP 7 extensions:
-
-`sudo apt-cache search php7-*`
 
 ### Using MariaDB
 
@@ -84,10 +76,18 @@ These instructions are based on Sequel Pro for OSX. When creating a new connecti
 * MySQL host: `127.0.0.1`,
 * Username: `[username]`. Default username is 'lesnar',
 * Password: `[password]`. Default password is 'lesnar',
-* Port: `default (3306)`,
+* Port: `leave blank`, (3306),
 * SSH Host: `[hostname]`, Default hostname is 'lesnar' or 'lesnar.dev',
 * SSH User: `vagrant`,
 * SSH Password: `vagrant`.
+
+### Adding PHP extensions
+
+If extra PHP modules are required e.g. GD, you can add them to the lesnar.yml file, under the PHP packages variable. Make sure you add the PHP 7 version of each extension e.g `php7.0-gd`. You can then install the extensions by running `vagrant provision` in the project folder.
+
+If you log into the Virtual Machine, you can run the following command to find available PHP 7 extensions:
+
+`sudo apt-cache search php7-*`
 
 ## Known Issues
 
