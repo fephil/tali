@@ -11,7 +11,7 @@ server:
   timezone: UTC
   locale: en_US.UTF-8
 php:
-  packages:
+  extensions:
     - php7.0-mysql
     - php7.0-curl
     - php-xdebug

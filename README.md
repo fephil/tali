@@ -83,7 +83,7 @@ These instructions are based on Sequel Pro for OSX. When creating a new connecti
 
 ### Adding PHP extensions
 
-If extra PHP modules are required e.g. GD, you can add them to the lesnar.yml file, under the PHP packages variable. Make sure you add the PHP 7 version of each extension e.g `php7.0-gd`. You can then install the extensions by running `vagrant provision` in the project folder.
+If extra PHP modules are required e.g. GD, you can add them to the lesnar.yml file, under the PHP extensions variable. Make sure you add the PHP 7 version of each extension e.g `php7.0-gd`. You can then install the extensions by running `vagrant provision` in the project folder.
 
 If you log into the Virtual Machine, you can run the following command to find available PHP 7 extensions:
 
