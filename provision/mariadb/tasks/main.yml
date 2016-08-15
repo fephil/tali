@@ -40,3 +40,6 @@
 
 - name: Create user
   mysql_user: name={{ mariadb.username }} password={{ mariadb.password }} priv=*.*:ALL state=present login_user=root login_password={{ mariadb_random_password.stdout }}
+
+- name: Create database
+  mysql_db: name={{ mariadb.database }} state=present login_user={{ mariadb.username }} login_password={{ mariadb.password }}
