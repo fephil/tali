@@ -1,11 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Lesnar v0.0.1
+# Tali v0.0.2
 
 # Get config file
 require 'yaml'
-lesnar = YAML.load_file('provision/lesnar.yml')
+tali = YAML.load_file('provision/tali.yml')
 
 # Are we on Unix/OSX or Windows?
 def which(cmd)
@@ -26,7 +26,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Set default provider for safety incase we forget to use a flag
-  ENV['VAGRANT_DEFAULT_PROVIDER'] = lesnar["vm"]["provider"]
+  ENV['VAGRANT_DEFAULT_PROVIDER'] = tali["vm"]["provider"]
 
   # VirtualBox OS - Ubuntu 14.04 x64
   config.vm.box = "ubuntu/trusty64"
@@ -38,17 +38,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Virtualbox specific settings
   config.vm.provider "virtualbox" do |v|
-    v.name = lesnar["vm"]["name"]
-    v.memory = lesnar["vm"]["ram"]
-    v.cpus = lesnar["vm"]["cpu"]
+    v.name = tali["vm"]["name"]
+    v.memory = tali["vm"]["ram"]
+    v.cpus = tali["vm"]["cpu"]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
   # Parallels specific settings.
   config.vm.provider "parallels" do |prl|
-    prl.name = lesnar["vm"]["name"]
-    prl.memory = lesnar["vm"]["ram"]
-    prl.cpus = lesnar["vm"]["cpu"]
+    prl.name = tali["vm"]["name"]
+    prl.memory = tali["vm"]["ram"]
+    prl.cpus = tali["vm"]["cpu"]
     prl.update_guest_tools = true
   end
 
@@ -63,10 +63,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.include_offline = true
 
   # Network settings - Private network, not accessible via the internet
-  config.vm.hostname = lesnar["vm"]["hostname"]
-  config.vm.network "private_network", ip: lesnar["vm"]["ip"]
+  config.vm.hostname = tali["vm"]["hostname"]
+  config.vm.network "private_network", ip: tali["vm"]["ip"]
   # config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
-  config.hostmanager.aliases = lesnar["vm"]["aliases"]
+  config.hostmanager.aliases = tali["vm"]["aliases"]
 
   # Folder sharing
   # Disable the default vagrant behaviour of sharing the entire project

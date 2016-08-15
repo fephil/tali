@@ -1,11 +1,11 @@
-# lesnar v0.0.1
+# tali v0.0.2
 
 **A Vagrant server setup for developing LEMP websites.**
 
 * Author: [Phil Lennon](http://frontendphil.com)
-* Source: [github.com/fephil/lesnar](http://github.com/fephil/lesnar)
-* Issues and Suggestions: [github.com/fephil/lesnar/issues](http://github.com/fephil/lesnar/issues)
-* Download: [https://github.com/fephil/lesnar/releases](https://github.com/fephil/lesnar/releases)
+* Source: [github.com/fephil/tali](http://github.com/fephil/tali)
+* Issues and Suggestions: [github.com/fephil/tali/issues](http://github.com/fephil/tali/issues)
+* Download: [https://github.com/fephil/tali/releases](https://github.com/fephil/tali/releases)
 * Twitter: [@frontendphil](http://twitter.com/frontendphil)
 * Email: [enquiry@frontendphil.com](mailto:enquiry@frontendphil.com)
 
@@ -13,17 +13,17 @@
 
 ## About
 
-Lesnar is an easy to use LEMP development server which uses the latest modern open source technologies available. Lesnar contains the following key features:
+Tali is an easy to use LEMP development server which uses the latest modern open source technologies available. Tali contains the following key features:
 
 * Uses Vagrant & Ansible to automatically build a Virtual Machine, without affecting the host computer,
 * Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
-* Easy to configure by using the 'lesnar.yml' file,
+* Easy to configure by using the 'tali.yml' file,
 * Built on the latest official Ubuntu LTS version images (14.04),
 * Includes nginx 1.8,
 * Includes PHP 7,
 * Includes MariaDB 10.1.
 
-**Note:** Lesnar is designed to only run as a development server on your machine, it does not have the security required for production use.
+**Note:** Tali is designed to only run as a development server on your machine, it does not have the security required for production use.
 
 ## First Time Install
 
@@ -36,7 +36,7 @@ Lesnar is an easy to use LEMP development server which uses the latest modern op
 
 On OSX, using Parallels 11 is recommended due to its increased speed. However, VirtualBox is free and works well.
 
-**Note:** Lesnar supports OSX or Linux. Windows is not supported at this time, but hopefully will be in the future.
+**Note:** Tali supports OSX or Linux. Windows is not supported at this time, but hopefully will be in the future.
 
 ## Usage
 
@@ -46,8 +46,8 @@ Once the first time install has been completed, it is an easy process to set up 
 
 **Note:** An internet connection is required for downloading the various files required.
 
-* Download the [latest release](https://github.com/fephil/lesnar/releases) and extract to a directory,
-* Adjust the variables in `provision/lesnar.yml` to suit your preferences,
+* Download the [latest release](https://github.com/fephil/tali/releases) and extract to a directory,
+* Adjust the variables in `provision/tali.yml` to suit your preferences,
 * Put your website files into the `www` folder,
 * In project folder, run in Terminal: `vagrant up`,
 * Wait for the server to build, you may need to enter your host system password.
@@ -65,8 +65,8 @@ You can either directly log into MariaDB by using SSH or by using software like 
 #### To login using SSH:
 
 * `vagrant ssh`,
-* `mysql -u [username] -p`. Default username is 'lesnar',
-* Enter your password from lesnar.yml when prompted. Default password is 'lesnar'.
+* `mysql -u [username] -p`. Default username is 'tali',
+* Enter your password from tali.yml when prompted. Default password is 'tali'.
 
 #### To login using external software:
 
@@ -74,16 +74,16 @@ These instructions are based on Sequel Pro for OSX. When creating a new connecti
 
 * Select SSH,
 * MySQL host: `127.0.0.1`,
-* Username: `[username]`. Default username is 'lesnar',
-* Password: `[password]`. Default password is 'lesnar',
+* Username: `[username]`. Default username is 'tali',
+* Password: `[password]`. Default password is 'tali',
 * Port: `leave blank`, (3306),
-* SSH Host: `[hostname]`, Default hostname is 'lesnar' or 'lesnar.dev',
+* SSH Host: `[hostname]`, Default hostname is 'tali' or 'tali.dev',
 * SSH User: `vagrant`,
 * SSH Password: `vagrant`.
 
 ### Adding PHP extensions
 
-If extra PHP modules are required e.g. GD, you can add them to the lesnar.yml file, under the PHP extensions variable. Make sure you add the PHP 7 version of each extension e.g `php7.0-gd`. You can then install the extensions by running `vagrant provision` in the project folder.
+If extra PHP modules are required e.g. GD, you can add them to the tali.yml file, under the PHP extensions variable. Make sure you add the PHP 7 version of each extension e.g `php7.0-gd`. You can then install the extensions by running `vagrant provision` in the project folder.
 
 If you log into the Virtual Machine, you can run the following command to find available PHP 7 extensions:
 
@@ -91,7 +91,7 @@ If you log into the Virtual Machine, you can run the following command to find a
 
 ## Known Issues
 
-* Windows isn't supported at this time. [#10](https://github.com/fephil/lesnar/issues/10)
+* Windows isn't supported at this time. [#10](https://github.com/fephil/tali/issues/10)
 
 ## Credit
 

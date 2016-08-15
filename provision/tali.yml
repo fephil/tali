@@ -4,9 +4,9 @@ vm:
   cpu: 2
   ram: 1024
   ip: 192.168.101.10
-  name: lesnar
-  hostname: lesnar.dev
-  aliases: ["www.lesnar.dev", "testsubdomain.lesnar.dev"]
+  name: tali
+  hostname: tali.dev
+  aliases: ["www.tali.dev", "testsubdomain.tali.dev"]
 server:
   timezone: UTC
   locale: en_US.UTF-8
@@ -16,5 +16,5 @@ php:
     - php7.0-curl
     - php-xdebug
 mariadb:
-  username: lesnar
-  password: lesnar
+  username: tali
+  password: tali

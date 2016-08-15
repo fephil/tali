@@ -1,5 +1,5 @@
 ---
-- include_vars: lesnar.yml
+- include_vars: tali.yml
 
 - name: Add MariaDB repository
   become: true
