@@ -16,4 +16,4 @@
 - name: Install PHP Packages
   become: true
   apt: pkg={{ item }} state=present
-  with_items: php.extensions
+  with_items: "{{ php.extensions }}"
