@@ -16,7 +16,7 @@
 Tali is an easy to use LEMP development server which uses the latest modern open source technologies available. Tali contains the following key features:
 
 * Uses Vagrant & Ansible to automatically build a Virtual Machine, without affecting the host computer,
-* Fully supports VirtualBox 5 and Parallels 11 (Pro/Business),
+* Fully supports VirtualBox 5.1 and Parallels 11/12 (Pro/Business),
 * Easy to configure by using the 'tali.yml' file,
 * Built on the latest official Ubuntu LTS version images (14.04),
 * Includes nginx 1.8,
@@ -27,16 +27,16 @@ Tali is an easy to use LEMP development server which uses the latest modern open
 
 ## First Time Install
 
-* Install VirtualBox 5 Or Parallels 11 (Pro/Business),
-* Install Vagrant 1.8.1. [Download Link](https://www.vagrantup.com/downloads.html),
-* Install Ansible 2.0. [Install instructions](http://docs.ansible.com/ansible/intro_installation.html#installing-the-control-machine),
+* Install VirtualBox 5.1 Or Parallels 11/12 (Pro/Business),
+* Install Vagrant 1.8.5. [Download Link](https://www.vagrantup.com/downloads.html),
+* Install Ansible 2. [Install instructions](http://docs.ansible.com/ansible/intro_installation.html#installing-the-control-machine),
 * Run in Terminal: `vagrant plugin install vagrant-hostmanager vagrant-triggers`,
 * If using VirtualBox, run in Terminal: `vagrant plugin install vagrant-vbguest`,
 * If using Parallels, run in Terminal: `vagrant plugin install vagrant-parallels`.
 
-On OSX, using Parallels 11 is recommended due to its increased speed. However, VirtualBox is free and works well.
+On OSX, using Parallels 11/12 is recommended due to its increased speed. However, VirtualBox is free and works well.
 
-**Note:** Tali supports OSX or Linux. Windows is not supported at this time, but hopefully will be in the future.
+**Note:** Tali supports OSX or Linux. Windows is not supported at this time, but will be in the future.
 
 ## Usage
 
