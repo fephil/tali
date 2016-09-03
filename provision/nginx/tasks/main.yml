@@ -11,6 +11,11 @@
   become: true
   apt: name=nginx state=present
 
+- name: Add nginx.conf
+  become: true
+  template: src=nginx.tpl dest=/etc/nginx/nginx.conf
+  notify: Restart nginx
+
 - name: Change default nginx site
   become: true
   template: src=default.tpl dest=/etc/nginx/sites-available/default
