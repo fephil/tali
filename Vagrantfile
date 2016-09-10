@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Tali v0.0.4
+# Tali v0.0.5
 
 # Get config file
 require 'yaml'
