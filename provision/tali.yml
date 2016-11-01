@@ -21,3 +21,4 @@ mariadb:
   username: tali
   password: tali
   database: tali
+  encoding: utf8mb4
