@@ -3,7 +3,7 @@ vm:
   provider: parallels
   cpu: 2
   ram: 1024
-  ip: 192.168.101.10
+  ip: 192.168.101.99
   name: tali
   hostname: tali.dev
   aliases: ["www.tali.dev", "testsubdomain.tali.dev"]
