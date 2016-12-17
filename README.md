@@ -1,4 +1,4 @@
-# tali v0.0.6
+# tali v0.0.7
 
 **A Vagrant server setup for developing LEMP websites.**
 
